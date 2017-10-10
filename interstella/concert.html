@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Interstella5555 Live Experience</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css?family=Knewave|PT+Sans:400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+
+	<header>
+		<img id="logo" src="images/logo.png" alt="logo">
+
+		<input type="checkbox" id="btn-menu">
+    	<label for="btn-menu"><img src="images/menu.png" alt="">
+    	</label>
+
+		<nav class="menu">
+			<ul>
+				<li><a href="home.html">HOME</a></li>
+				<li><a href="concert.html">THE CONCERT</a></li>
+				<li><a href="story.html">STORY</a></li>
+				<li><a href="music.html">MUSIC</a></li>
+				<li><!-- Trigger/Open The Modal -->
+					<button id="myBtn">TICKET</button>
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+					    <div class="modal-header">
+					      <span class="close">&times;</span>
+					      <h1 id="h1_modal">Get the tickets!</h1>
+					    </div>
+					    <div class="modal-body">
+					        <p>Fill this form to be part of the group of preselected participant for the concert. Tickets are limited and will be only for those who can pass through our stricted selection.... this is only the first one, so good Luck!</p>
+					        <form>
+					            <p>Name<span> (required)</span><br>
+					            <input type="text" name="name" required><br><br>
+					            E-mail<span> (required)</span><br>
+					            <input type="email" name="email" required><br><br>
+					            First name<span> (required)</span><br>
+					            <input type="text" name="firstname" required><br><br>
+					            Last name<span> (required)</span><br>
+					            <input type="text" name="lastname" required><br><br>
+					            Current country you live in<span> (required)</span><br>
+					            <input type="text" name="country" required><br><br>
+					            Age<span> (required)</span><br>
+					            <input type="number" name="age" required><br><br>
+					            Phone number<span> (required)</span><br>
+					            <input type="number" name="phonenumber" required><br>
+					            <input type="submit" value="SEND" id="hoversubmit"></p>
+					        </form>
+					    </div>
+					    <div class="modal-footer">
+					    </div>
+					  </div>
+
+					</div>
+
+					<script>
+					// Get the modal
+					var modal = document.getElementById('myModal');
+
+					// Get the button that opens the modal
+					var btn = document.getElementById("myBtn");
+
+					// Get the <span> element that closes the modal
+					var span = document.getElementsByClassName("close")[0];
+
+					// When the user clicks the button, open the modal 
+					btn.onclick = function() {
+					    modal.style.display = "block";
+					}
+
+					// When the user clicks on <span> (x), close the modal
+					span.onclick = function() {
+					    modal.style.display = "none";
+					}
+
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function(event) {
+					    if (event.target == modal) {
+					        modal.style.display = "none";
+					    }
+					}
+					</script>
+				</li>
+			</ul>
+		</nav>	
+	</header>
+
+	<main>
+		
+	<div class="container">
+		<section class="info">
+			<h1 class="title">The Concert</h1>
+			<h2> AAug.1st, 2018: Daft Punk meets The Crescendolls at Nippon Budokan!</h2>
+
+			<img class="interior" src="images/theconcert.jpg" alt="concert">
+
+	        <p class="content">
+		        What if Daft Punk collaborates with the most popular alien band in Japan?. It's been 15 years since Interstella 5555 was released, but Daft Punk and The Crescendolls are back and finally scheduled to perform together for the first time at Japan's most prestigious musical venue, Nippon Budokan, in August 2018!.
+
+		        <br><br>
+
+				This collaboration would be an unforgettable show that cant’t be missed, having a unique experience with the movie and the complete original soundtrack.
+
+				<br><br>
+
+				People from different parts of the world will be waiting to get a ticket. That’s why will be a waiting list to create a filter for the 14.201 spectators. So don’t loose your time and get to the waiting list and good luck!
+			</p>
+		</section>
+	</div>
+	</main>
+
+	<footer>
+		<div id="icons">
+			<a href="" class="icons">		
+				<img src="images/twicon.png" alt="twitter">
+			</a>
+			<a href="" class="icons">		
+				<img src="images/fbicon.png" alt="facebook">
+			</a>
+			<a href="" class="icons">		
+				<img src="images/insicon.png" alt="instagram">
+			</a>
+		</div>
+
+		<p>Interstella 5555: The Story of the 5ecret 5star 5ystem<br>
+			Copyright 2013-2017, Uchu Senshi Edomondo
+		</p>
+	</footer>
+
+</body>
+</html>

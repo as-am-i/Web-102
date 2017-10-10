@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Interstella5555 Live Experience</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css?family=Knewave|PT+Sans:400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+
+	<header>
+		<img id="logo" src="images/logo.png" alt="logo">
+
+		<input type="checkbox" id="btn-menu">
+    	<label for="btn-menu"><img src="images/menu.png" alt="">
+    	</label>
+
+		<nav class="menu">
+			<ul>
+				<li><a href="home.html">HOME</a></li>
+				<li><a href="concert.html">THE CONCERT</a></li>
+				<li><a href="story.html">STORY</a></li>
+				<li><a href="music.html">MUSIC</a></li>
+				<li><!-- Trigger/Open The Modal -->
+					<button id="myBtn">TICKET</button>
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+					    <div class="modal-header">
+					      <span class="close">&times;</span>
+					      <h1 id="h1_modal">Get the tickets!</h1>
+					    </div>
+					    <div class="modal-body">
+					        <p>Fill this form to be part of the group of preselected participant for the concert. Tickets are limited and will be only for those who can pass through our stricted selection.... this is only the first one, so good Luck!</p>
+					        <form>
+					            <p>Name<span> (required)</span><br>
+					            <input type="text" name="name" required><br><br>
+					            E-mail<span> (required)</span><br>
+					            <input type="email" name="email" required><br><br>
+					            First name<span> (required)</span><br>
+					            <input type="text" name="firstname" required><br><br>
+					            Last name<span> (required)</span><br>
+					            <input type="text" name="lastname" required><br><br>
+					            Current country you live in<span> (required)</span><br>
+					            <input type="text" name="country" required><br><br>
+					            Age<span> (required)</span><br>
+					            <input type="number" name="age" required><br><br>
+					            Phone number<span> (required)</span><br>
+					            <input type="number" name="phonenumber" required><br>
+					            <input type="submit" value="SEND" id="hoversubmit"></p>
+					        </form>
+					    </div>
+					    <div class="modal-footer">
+					    </div>
+					  </div>
+
+					</div>
+
+					<script>
+					// Get the modal
+					var modal = document.getElementById('myModal');
+
+					// Get the button that opens the modal
+					var btn = document.getElementById("myBtn");
+
+					// Get the <span> element that closes the modal
+					var span = document.getElementsByClassName("close")[0];
+
+					// When the user clicks the button, open the modal 
+					btn.onclick = function() {
+					    modal.style.display = "block";
+					}
+
+					// When the user clicks on <span> (x), close the modal
+					span.onclick = function() {
+					    modal.style.display = "none";
+					}
+
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function(event) {
+					    if (event.target == modal) {
+					        modal.style.display = "none";
+					    }
+					}
+					</script>
+				</li>
+			</ul>
+		</nav>	
+	</header>
+
+	<main>	
+	<div class="container">
+		<section class="info_story">
+			<h1 class="title">Story</h1>
+			<h2>Everything has a beginning...</h2>
+
+
+	        <p class="content">
+
+	        <img id="img_story" src="images/story.jpg" alt="story">
+
+		      The Crescendolls a popular band in the galaxy is performing live for a crowdy audience. However military forces invades the planet and kidnap the band. Space pilot Shep in other side of the galaxy dreams about Stella, the female member of the band deciding to pursue the kidnappers trhough a wormhole, where he crashes on Earth,...
+			</p>
+		</section>
+		<section class="info_story">
+	        <img class="characters" src="images/story_stella.jpg" alt="stella">
+			<h3>Stella</h3>
+			<p class="content">
+			– Age: 24<br>
+			– The bassist of The Crescendolls and the only female band member. Arpegius is her brother.</p>
+
+		</section>
+		<section class="info_story">
+	        <img class="characters" src="images/story_arpeguis.jpg" alt="arpeguis">
+			<h3>Arpeguis</h3>
+			<p class="content">
+			– Age: 27<br>
+			– The guitarist of The Crescendolls. Stella is her sister.</p>
+
+		</section>
+		<section class="info_story">
+	        <img class="characters" src="images/story_baryl.jpg" alt="baryl">
+			<h3>Baryl</h3>
+			<p class="content">
+			– Age: 20<br>
+			– The drummer of The Crescendolls.</p>
+
+		</section>
+		<section class="info_story">
+	        <img class="characters" src="images/story_octave.jpg" alt="octave">
+			<h3>Octave</h3>
+			<p class="content">
+			– Age: 32<br>
+			– The keyboardist and vocalist of The Crescendolls.</p>
+
+		</section>
+		<section class="info_story">
+	        <img class="characters" src="images/story_shep.jpg" alt="shep">
+			<h3>Shep</h3>
+			<p class="content">
+			– An alien astronaut on a mission t o rescue The Crescendolls. He is crazy about Stella.</p>
+
+		</section>
+		<section class="info_story">
+	        <img class="characters" src="images/story_ earldedarkwood.jpg" alt="earl">
+			<h3>Earl de Darkwood</h3>
+			<p class="content">
+			– He promotes The Crescendolls to stardom on the earth, but he seems to have secrets.</p>
+
+		</section>
+
+
+
+
+
+
+
+	</div>
+	</main>
+
+
+	<footer>
+		<div id="icons">
+			<a href="" class="icons">		
+				<img src="images/twicon.png" alt="twitter">
+			</a>
+			<a href="" class="icons">		
+				<img src="images/fbicon.png" alt="facebook">
+			</a>
+			<a href="" class="icons">		
+				<img src="images/insicon.png" alt="instagram">
+			</a>
+		</div>
+
+		<p>Interstella 5555: The Story of the 5ecret 5star 5ystem<br>
+			Copyright 2013-2017, Uchu Senshi Edomondo
+		</p>
+	</footer>
+
+</body>
+</html>
