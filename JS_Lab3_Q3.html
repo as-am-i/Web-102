@@ -127,9 +127,11 @@
 					(pos_bottom[0] == i && pos_bottom[1] == j)
 					)
 					{
+					// add class to the elements to change the colors
 					box.className = "piece";
 					}
 				else {
+					// add both "piece" and "blocked"
 					box.className = "piece blocked";
 					}
 			}
@@ -186,15 +188,13 @@
 	}
 
 
-	// call onclick
-	function move([i, j]){
-		// console.log([i,j]);
-		// console.log(states[i][j]);
+	// called onclick
+	function move([row, col]){
 
-		var pos_top = [i-1, j];
-		var pos_left = [i, j-1];
-		var pos_right = [i, j+1];
-		var pos_bottom = [i+1, j];
+		var pos_top = [row-1, col];
+		var pos_left = [row, col-1];
+		var pos_right = [row, col+1];
+		var pos_bottom = [row+1, col];
 
 		if (
 			// can switch
@@ -207,17 +207,13 @@
 			(pos_bottom[0] == empty[0] && pos_bottom[1] == empty[1])
 			) {
 			// switched the value
-			states[empty[0]][empty[1]] = states[i][j];
-			states[i][j] = "";
+			states[empty[0]][empty[1]] = states[row][col];
+			states[row][col] = "";
 
 			// the position of the new empty box
-			empty = [i,j]; 
+			empty = [row,col]; 
 			}
-		else {
 
-
-		}
-		
 		// end
 		if (
 			states[0][0] == 1 &&
