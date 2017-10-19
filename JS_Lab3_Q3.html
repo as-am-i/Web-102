@@ -1,0 +1,264 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sliding puzzle</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			width: 498px;
+			text-align: center;
+		}
+
+		#board {
+			width: 498px;
+			/*boxes 480px = 160px * 3*/
+			/* margin 12px = 2px*2*3 */
+			/*border 6px = 1px*2*3*/
+		}
+
+
+		.piece {
+			border: 1px solid black;
+			width: 160px;
+			height: 90px; /*160px - 70px(padding-top)*/
+			text-align: center;
+			font-size: 20px;
+			padding-top: 70px; 
+		}
+
+		#board ul li {
+			margin: 2px;
+			float: left;
+			list-style: none;
+		}
+
+		#info {
+			clear: both;
+		}
+
+		#info p {
+			font-size: 12px;
+		}
+
+		button {
+			padding: 2px;
+		}
+
+		.piece:hover {
+			background-color: green;
+		}
+
+		.blocked:hover {
+			background-color: red;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<h1>Sliding Puzzle</h1>
+	<div id="board">
+		<ul>
+			<li><div class="piece" id="box00" onclick="move([0,0])"></div></li>
+			<li><div class="piece" id="box01" onclick="move([0,1])"></div></li>
+			<li><div class="piece" id="box02" onclick="move([0,2])"></div></li>
+			<li><div class="piece" id="box10" onclick="move([1,0])"></div></li>
+			<li><div class="piece" id="box11" onclick="move([1,1])"></div></li>
+			<li><div class="piece" id="box12" onclick="move([1,2])"></div></li>
+			<li><div class="piece" id="box20" onclick="move([2,0])"></div></li>
+			<li><div class="piece" id="box21" onclick="move([2,1])"></div></li>
+			<li><div class="piece" id="box22" onclick="move([2,2])"></div></li>
+		</ul>
+	</div>
+	<div id="info">
+		<ul>
+			<li><p>Moves:</p><span id="move_count"></span></li>
+			<li><p>Start Time:</p><span id="start_time"></span></li>
+			<li><p id="show_endtime">End Time:</p><span id="end_time"></span></li>
+			<li><button onclick="reset()">RESTART GAME</button></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+
+		// store the value to the states
+		// var states = [[3,8,6],[7,"",2],[1,4,5]];
+		var states = [[1,2,3],[4,5,6],["",7,8]];
+
+		// coordinate to the empty box
+		// var empty = [1,1]; 
+		var empty = [2,0];
+
+		// initialize time, show it
+		var start = new Date();
+		var end = -1; // -1 means not solved
+		updateTime();
+
+		// initialize counter, show it
+		var counter = 0;
+		document.getElementById("move_count").innerHTML = counter;
+
+
+	function updateInterface() {
+
+		var pos_top = [empty[0]-1, empty[1]];
+		var pos_left = [empty[0], empty[1]-1];
+		var pos_right = [empty[0], empty[1]+1];
+		var pos_bottom = [empty[0]+1, empty[1]];
+
+		for (let i = 0; i < 3; i++) {
+			for (let j =0; j < 3; j++) {
+				let box = document.getElementById("box" + i + "" + j);
+				box.innerHTML = states[i][j];
+				if (
+					(pos_top[0] == i && pos_top[1] == j)
+					||
+					(pos_left[0] == i && pos_left[1] == j)
+					||
+					(pos_right[0] == i && pos_right[1] == j)
+					||
+					(pos_bottom[0] == i && pos_bottom[1] == j)
+					)
+					{
+					box.className = "piece";
+					}
+				else {
+					box.className = "piece blocked";
+					}
+			}
+		}
+
+		if (end == -1) {
+		// not solved
+		document.getElementById("show_endtime").style.display = "none";
+		}
+		else {
+		// solved
+		document.getElementById("show_endtime").style.display = "block";
+		endTime();
+		}
+	}
+
+	function updateCount() {
+		counter ++
+		document.getElementById("move_count").innerHTML = counter;
+	}
+
+	function updateTime() {
+		var h = start.getHours();
+		var m = start.getMinutes();
+		var s = start.getSeconds();
+		document.getElementById("start_time").innerHTML = h + ":" + m + ":" + s;
+	}
+
+	function endTime() {
+		var h = end.getHours();
+		var m = end.getMinutes();
+		var s = end.getSeconds();
+		document.getElementById("end_time").innerHTML = h + ":" + m + ":" + s;
+
+		// document.createTextNode("Congratulations! You solved!");
+		// document.body.appendChild(t);
+	}
+
+	function reset() {
+		// var states = [[3,8,6],[7,"",2],[1,4,5]];
+		states = [[1,2,3],[4,5,6],["",7,8]];
+
+		// var empty = [1,1]; 
+		empty = [2,0];
+
+		start = new Date();
+		end = -1; // -1 means not solved
+		updateTime();
+
+		var counter = 0;
+		document.getElementById("move_count").innerHTML = counter;
+
+		updateInterface();
+	}
+
+
+	// call onclick
+	function move([i, j]){
+		// console.log([i,j]);
+		// console.log(states[i][j]);
+
+		var pos_top = [i-1, j];
+		var pos_left = [i, j-1];
+		var pos_right = [i, j+1];
+		var pos_bottom = [i+1, j];
+
+		if (
+			// can switch
+			(pos_top[0] == empty[0] && pos_top[1] == empty[1])
+			||
+			(pos_left[0] == empty[0] && pos_left[1] == empty[1])
+			||
+			(pos_right[0] == empty[0] && pos_right[1] == empty[1])
+			||
+			(pos_bottom[0] == empty[0] && pos_bottom[1] == empty[1])
+			) {
+			// switched the value
+			states[empty[0]][empty[1]] = states[i][j];
+			states[i][j] = "";
+
+			// the position of the new empty box
+			empty = [i,j]; 
+			}
+		else {
+
+
+		}
+		
+		// end
+		if (
+			states[0][0] == 1 &&
+			states[0][1] == 2 &&
+			states[0][2] == 3 &&
+			states[1][0] == 4 &&
+			states[1][1] == 5 &&
+			states[1][2] == 6 &&
+			states[2][0] == 7 &&
+			states[2][1] == 8
+			) {
+
+			end = new Date();
+		}
+		
+		updateInterface();
+		updateCount();
+	}
+
+	window.onload = function() {
+		reset();
+		updateInterface();
+		updateTime();
+	}
+
+
+	// document.getElementById(arr[i][j]).addEventListener("click", isEmpty());
+	// 	function isEmpty() {
+
+	// 		var emptyRow;
+	// 		var emptyColum;
+
+	// 		if (typeof(arr[i][j]) != "number") {
+	// 			emptyRow = i;
+	// 			emptyColum = j;
+	// 		}
+	// 	}
+
+
+	</script>
+
+
+</body>
+</html>
