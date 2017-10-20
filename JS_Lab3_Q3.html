@@ -141,10 +141,13 @@
 		if (end == -1) {
 			// not solved
 			document.getElementById("show_endtime").style.display = "none";
+			document.getElementById("end_time").style.display = "none";
+
 		}
 		else {
 			// solved
 			document.getElementById("show_endtime").style.display = "block";
+			document.getElementById("end_time").style.display = "block";
 			updateTime(end, "end_time");
 		}
 	}
@@ -163,11 +166,31 @@
 	}
 
 
+	function shuffle(arr) {
+		for(let row = 0; row < arr.length; row++) {
+			for(let col =0; col < arr[row].length; col++) {
+				var randomRow = Math.floor(Math.random()*(row+1));
+				var randomCol = Math.floor(Math.random()*(col+1));
+				// the reason why we use (row+1) is the last number of range is exclusive
+
+				// get that item's content
+				var itemAtIndex = arr[randomRow][randomCol];
+
+				// swap the content
+				// the position = contents
+				arr[randomRow][randomCol] = arr[row][col];
+				arr[row][col] = itemAtIndex
+			}
+		}
+		return arr;
+	}
+
 	function reset() {
 		states = [[3,8,6],[7,"",2],[1,4,5]];
+		states = shuffle(states);
 		// states = [[1,2,3],[4,5,6],["",7,8]];
 
-		empty = [1,1]; 
+		empty = getEmptyPosition(states); 
 		// empty = [2,0];
 
 		start = new Date();
@@ -180,6 +203,18 @@
 		updateInterface();
 	}
 
+	function getEmptyPosition(states) {
+	    var empty = [];
+	    for(let row = 0; row < states.length; row++) {
+	    	for (let col = 0; col < states[row].length; col++) {
+	    		if (states[row][col] == "") {
+	            empty.push(row, col);
+	            return empty;
+	            // whenever the loop finds return, it will break
+				}
+			}
+	    }
+	}
 
 	// called onclick
 	function move([row, col]){
@@ -221,8 +256,7 @@
 
 			end = new Date();
 
-			var finalMessage = document.createTextNode("Congratulations! You solved!");
-			document.body.appendChild(finalMessage);
+			alert("Congratulations! You solved!");
 		}
 		
 		updateInterface();
