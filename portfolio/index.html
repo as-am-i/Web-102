@@ -14,25 +14,43 @@
 
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Bootstrap JS -->
-	<script src="assets/bootstrap/jquery/jquery-3.2.1.min"></script>
+	<script src="assets/bootstrap/jquery/jquery-3.2.1.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.js"></script>
 </head>
 
 
 <body>
 
-	<nav>
-		<ul>
-			<li class="nav-item">
-				<a  class="nav-link" href="">WORK/</a>
-			</li>
-			<li class="nav-item">
-				<a  class="nav-link" href="">PROFILE/</a>
-			</li>
-			<li class="nav-item">
-				<a  class="nav-link" href="">CONTACT/</a>
-			</li>
-		</ul>
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+
+		<div class="container-fluid">			
+			<div class="navbar-header">
+				<!-- hamburger button -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span class="icon-bar"></span>
+       				<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>                        
+      			</button>
+      			<!-- text and homelink -->
+      			<span class="navbar-brand navtext-color"> > $ cd </span>
+				<a class="navbar-brand" href="#"> ~/ </a>		
+	    	</div>
+
+		    <div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">WORK/</a>
+					</li>
+					<li>
+						<a href="#">PROFILE/</a>
+					</li>
+					<li>
+						<a href="#">CONTACT/</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 
 

@@ -1,0 +1,12 @@
+/* the fixed navbar will overlay my other content without this padding-top */
+body {
+	padding-top: 70px;
+}
+
+/*change "navbar-inverse" to the original color pattern*/
+
+
+
+.navbar-header .navtext-color:hover {
+	color: #999;
+}
