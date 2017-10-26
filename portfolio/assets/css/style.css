@@ -16,40 +16,109 @@ html, body {
 }
 
 /*change "navbar-inverse" to the original color pattern*/
+.navbar-inverse {
+	/*background-color: black;*/
+}
 
+nav div ul li a:hover {
+	/*links to each section*/
+	color: #88D317 !important;
+}
 
+nav div ul li a{
+	/*links to each section*/
+	color: white !important;
+}
 
+nav div a:hover {
+	/*link to index*/
+	color: #88D317 !important;
+}
 
-
+nav div a {
+	/*link to index*/
+	color: white !important;
+}
 
 .navbar-header .navtext:hover {
-	color: #999;
+	color: white;
+}
+
+.navbar-header .navtext{
+	color: white;
 }
 
 .navtext {
 	padding-right: 0;
 }
 
+
+/*index*/
 .index {
-	background-color: #1A0315;
+	background-color: #6e3667; /*#1A0315;*/
 	color: white;
-	text-align: center;
 	width: 100%; /* background-color is set here */
 	padding: 70px 0 70px 0;
+
+	position: relative; /* parent of index_contents*/
 }
 
-.logo {
+.index_parent {
+	/*position: relative;*/
+}
+
+.index_contents {
+	/* centering elements in index*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translateY(-50%);
+	-webkit-transform : translateY(-50%);
+	transform : translate(-50%, -50%);
+}
+
+
+
+h1 {
 	font-weight: 700;
-	font-size: 15vw;
+	font-size: 14vw;
 	/*defalt is 14px*/
+	color: #88D317;
 }
 
+h2 {
+	text-align: center;
+	font-size: 1.5vw;
+}
+
+h3 {
+	font-size: 4.5vw;
+}
+
+h4 {
+	font-size: 2vw;
+}
+
+.command_text {
+	color: #999;
+	font-size: 16px;
+	margin: 0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+/*profile*/
+.profile_text {
+	margin: 5% auto;
+}
 
 
 
 
 @media only screen and (min-width: 100px) and (max-width : 700px){
-    .logo {/*
-        font-size: 10vw;
-    }*/
+    h3 {
+    	font-size: 6vw;
 }
