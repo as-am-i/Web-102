@@ -10,6 +10,33 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Exo', sans-serif;
 }
 
+h1 {
+	font-weight: 900;
+	font-size: 14vw;
+	/*defalt is 14px*/
+	color: #88D317;
+}
+
+h2 {
+	text-align: center;
+	font-size: 1.5vw;
+	color: #1a0315;
+}
+
+h3 {
+	font-size: 4.5vw;
+	color: #1a0315;
+}
+
+h4 {
+	font-size: 2vw;
+	color: #1a0315;
+}
+
+h5 {
+	font-size: 1.5vw;
+}
+
 p {
 	font-family: 'Inconsolata', monospace;
 }
@@ -86,34 +113,6 @@ nav div a {
 	-ms-transform: translateY(-50%);
 	-webkit-transform : translateY(-50%);
 	transform : translate(-50%, -50%);
-}
-
-
-h1 {
-	font-weight: 900;
-	font-size: 14vw;
-	/*defalt is 14px*/
-	color: #88D317;
-}
-
-h2 {
-	text-align: center;
-	font-size: 1.5vw;
-	color: #1a0315;
-}
-
-h3 {
-	font-size: 4.5vw;
-	color: #1a0315;
-}
-
-h4 {
-	font-size: 2vw;
-	color: #1a0315;
-}
-
-h5 {
-	font-size: 1.5vw;
 }
 
 .command_text {
