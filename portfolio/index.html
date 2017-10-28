@@ -36,7 +36,7 @@
         			<span class="icon-bar"></span>                        
       			</button>
       			<!-- text and link to index -->
-      			<span class="navbar-brand navtext"> > $ cd </span>
+      			<span class="navbar-brand navtext"> > # cd </span>
 				<a class="navbar-brand" href="#index"> ~/ </a>		
 	    	</div>
 
@@ -71,19 +71,18 @@
 
 	<!-- work page -->
 	<div id="work" class="container fill">
-		<h3>> $ work</h3>
+		<h3>> work</h3>
 	</div>
 
 
 
 	<!-- profile page -->
-	<div id="profile" class="container fill">
-		<h3>> $ who am i</h3>
+	<div class="wrap_profile fill">
+	<div id="profile" class="container">
+		<h3>> who am i</h3>
 		<p class="command_text">> ls</p>
-		<ul class="list-inline">
-			<li><p class="command_text">></p></li>
+		<ul class="list-unstyled">
 			<li><a href="">GITHUB</a></li>
-			<li><a href="">MAIL</a></li>
 			<li><a href="">LINKEDIN</a></li>
 		</ul>
 		<p class="profile_text">
@@ -96,7 +95,7 @@
 			Now I’m ready to work with you.
 		</p>
 		<h4>Technical Skills:</h4>
-		<ul class="list-unstyled">
+		<ul class="list-unstyled list-inline myskills">
 			<li>Ruby</li>
 			<li>Ruby on Rails</li>
 			<li>Python</li>
@@ -106,29 +105,25 @@
 			<li>SQL</li>
 		</ul>
 	</div>
+	</div>
 
 	<!-- contact page -->
 	<div id="contact" class="container fill">	
-		<h3>> $ get in touch</h3>
+		<h3>> get in touch</h3>
 		<p class="command_text">> ls</p>
-		<ul class="list-inline">
-			<li><p class="command_text">></p></li>
+		<ul class="list-unstyled sns-link">
 			<li><a href="">GITHUB</a></li>
-			<li><a href="">MAIL</a></li>
 			<li><a href="">LINKEDIN</a></li>
 		</ul>
-		<form>
-			NAME<br>
-			<input type="text" name="name" required><br>
-			EMAIL<br>
-			<input type="email" name="email" required><br>
-			PHONE<br>
-			<input type="number" name="phonenumber"><br>
-			SUBJECT<br>
-			<input type="text" name="subject" required><br>
-			MESSAGE<br>
-			<input type="text" name="comment" required><br>
-			<input type="submit" value=""></p>
+		<form class="form_container">
+			<ul class="list-unstyled">
+				<li><input class="input_field" type="text" name="name" required placeholder="Name *"><br></li>
+				<li><input class="input_field" type="email" name="email" required placeholder="Email *"><br></li>
+				<li><input class="input_field" type="number" name="phonenumber" placeholder="Phone(Optional)"><br></li>				
+				<li><input class="input_field" type="text" name="subject" required placeholder="Subject *"><br></li>				
+				<li><textarea class="" name="message" required placeholder="Message *"></textarea><br></li>
+				<li><input class="form_button" type="submit" value="SEND"></p></li>
+			</ul>
 		</form>
 	</div>
 </body>
