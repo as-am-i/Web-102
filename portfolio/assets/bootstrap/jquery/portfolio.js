@@ -12,3 +12,13 @@ $(document).ready(function(){
 	    });
 	});
 });
+
+
+$(function(){
+    $("h1").css({opacity:'0'});
+    setTimeout(function(){
+        $("h1").stop().animate({opacity:'1'},1000);
+    },50);
+});
+
+
